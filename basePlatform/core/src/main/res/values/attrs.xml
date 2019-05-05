@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="button_style">
+        <attr name="QMUIButtonStyle" format="reference" />
+        <attr name="qmui_alpha_pressed" format="float" />
+        <attr name="qmui_alpha_disabled" format="float" />
+    </declare-styleable>
+
+    <!-- EmptyView start -->
+    <declare-styleable name="QMUIEmptyView">
+        <attr name="qmui_show_loading" format="boolean" />
+        <attr name="qmui_image_view" format="integer" />
+        <attr name="qmui_title_text" format="string" />
+        <attr name="qmui_detail_text" format="string" />
+        <attr name="qmui_btn_text" format="string" />
+    </declare-styleable>
+    <!-- EmptyView end -->
+
+    <!--Loading-->
+    <declare-styleable name="QMUILoadingStyle">
+        <attr name="LoadingStyle" format="reference" />
+
+    </declare-styleable>
+
+    <!--************ QMUILoading ***********-->
+    <declare-styleable name="LoadingView">
+        <attr name="qmui_loading_view_size" format="dimension" />
+        <attr name="qmui_loading_view_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="VerticalRollingTextView" tools:ignore="ResourceName">
+        <!--两次动画之间的间隔-->
+        <attr name="animInterval" format="integer"/>
+        <!--展示条目的个数-->
+        <attr name="itemCount" format="integer"/>
+        <!--多行显示时自适应文字的最大文字大小-->
+        <attr name="maxTextSize" format="dimension"/>
+        <!--多行显示时自适应文字的最小文字大小-->
+        <attr name="minTextSize" format="dimension"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="NumberProgressBar" tools:ignore="ResourceName">
+        <attr name="progress_current" format="integer"/>
+        <attr name="progress_max" format="integer"/>
+
+        <attr name="progress_unreached_color" format="color"/>
+        <attr name="progress_reached_color" format="color"/>
+
+        <attr name="progress_reached_bar_height" format="dimension"/>
+        <attr name="progress_unreached_bar_height" format="dimension"/>
+
+        <attr name="progress_text_size" format="dimension"/>
+        <attr name="progress_text_color" format="color"/>
+
+        <attr name="progress_text_offset" format="dimension"/>
+
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MultiGroupHistogramView" tools:ignore="ResourceName">
+        <attr name="coordinateAxisWidth" format="dimension" />
+        <attr name="coordinateAxisColor" format="color" />
+        <attr name="groupNameTextColor" format="color" />
+        <attr name="groupNameTextSize" format="dimension" />
+        <attr name="groupInterval" format="dimension" />
+        <attr name="histogramInterval" format="dimension" />
+        <attr name="histogramValueTextColor" format="color" />
+        <attr name="histogramValueTextSize" format="dimension" />
+        <attr name="histogramHistogramWidth" format="dimension" />
+        <attr name="histogramPaddingStart" format="dimension" />
+        <attr name="histogramPaddingEnd" format="dimension" />
+        <attr name="chartPaddingTop" format="dimension" />
+        <attr name="distanceFormGroupNameToAxis" format="dimension" />
+        <attr name="distanceFromValueToHistogram" format="dimension" />
+        <!--图表数值小数点位数-->
+        <attr name="histogramValueDecimalCount">
+            <enum name="ZERO" value="0" />
+            <enum name="ONE" value="1" />
+            <enum name="TWO" value="2" />
+        </attr>
+        <attr name="histogramValueDegree" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="Themes" tools:ignore="ResourceName">
+        <attr name="numberProgressBarStyle" format="reference"/>
+    </declare-styleable>
+</resources>

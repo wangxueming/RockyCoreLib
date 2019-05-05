@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="base_AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/base_colorPrimaryDark</item>
+        <item name="colorAccent">@color/base_colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/base_CommonActivityAnimation</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+</resources>

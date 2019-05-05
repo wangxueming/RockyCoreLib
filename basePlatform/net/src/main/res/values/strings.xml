@@ -1,0 +1,8 @@
+<resources>
+    <string name="login_app_name">net</string>
+    <string name="empty_data_from_server">The server went back to empty data.</string>
+    <string name="bad_network">Network error</string>
+    <string name="error_parse_data">Data parsing error</string>
+    <string name="network_time_out">Network connection timed out, please check your network status.</string>
+    <string name="network_anomaly">Network anomaly, please check your network status.</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="core_CommonPopupWindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/core_popup_show</item>
+        <item name="android:windowExitAnimation">@anim/core_popup_hide</item>
+    </style>
+
+</resources>

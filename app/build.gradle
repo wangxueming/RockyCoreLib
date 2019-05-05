@@ -1,0 +1,118 @@
+apply from: "${rootProject.rootDir}/config.gradle"
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+
+android {
+    project.ext.setDefaultConfig project
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+        //强制前缀
+        resourcePrefix "main_"
+
+        //MultiDex分包方法
+        multiDexEnabled true
+
+        //ARouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        //打包出错,但无效
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+        }
+
+        //目录指向配置
+        sourceSets {
+            //设置依赖so库路径
+            main.jniLibs.srcDirs = ['libs']
+        }
+
+        ndk {
+            // 设置支持的SO库架构(cpu)
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86'
+        }
+
+        manifestPlaceholders = [
+                GETUI_APP_ID : "TGeNd6cOo69VCx9gXF5YY6",
+                GETUI_APP_KEY : "0nwRjjyfoaANrr0xooPXj",
+                GETUI_APP_SECRET : "peY1o4FasDAe2yDVvX37z"
+        ]
+    }
+    signingConfigs {
+        release {
+            keyAlias key_Alias
+            keyPassword key_Password
+            storeFile file('../rocky_keystore.jks')
+            storePassword store_Password
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    buildTypes {
+        debug {
+            //是否进行混淆
+            minifyEnabled false
+            // 混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //配置签名文件
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled false
+            //是否清理无用资源,依赖于minifyEnabled
+            shrinkResources false
+            //是否启用zipAlign压缩
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //配置签名文件
+            signingConfig signingConfigs.release
+            //配置apk路径
+            applicationVariants.all { variant ->
+                def buildType = variant.buildType.name
+                if (buildType == 'release') {
+                    variant.getPackageApplication().outputDirectory = new File(rootProject.rootDir, "release")
+                    variant.outputs.each { output ->
+                        def outputFile = output.outputFile
+                        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                            def fileName = "rocky_v${rootProject.ext.versionName}_${releaseTime()}.apk"
+                            output.apkData.outputFileName = fileName
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+dependencies {
+    //解决support包版本号不统一问题.
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-v13'
+        all*.exclude group: 'com.android.support', module: 'support-v4'
+    }
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //黄油刀
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+    //ARouter
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
+
+    compile project(path: ':projectcore')
+
+    if (rootProject.ext.buildWholeApp) {
+//        implementation project(':m_first_page')
+    }
+}

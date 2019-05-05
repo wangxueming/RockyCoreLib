@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/base_white_corner_5"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/base_dlg_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="注销银行卡确认"
+        android:textColor="#ff282828"
+        android:textSize="16dp" />
+
+    <View android:id="@+id/base_dlg_top_v_divide" style="@style/base_Divide" />
+
+    <TextView
+        android:id="@+id/base_dlg_tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="21dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:minHeight="88dp"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:textColor="@color/base_black_282828"
+        android:textSize="16dp"
+        tools:text="内容已更改，是否保存" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/base_gray_EFEFEF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/base_dlg_tv_negative"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/base_cancel"
+            android:textColor="@color/base_colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/base_gray_EFEFEF" />
+
+        <TextView
+            android:id="@+id/base_dlg_tv_positive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/base_confirm"
+            android:textColor="@color/base_colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

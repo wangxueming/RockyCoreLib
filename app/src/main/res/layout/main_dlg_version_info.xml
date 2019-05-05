@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/main_bg_version_info_dlg"
+        android:minHeight="297dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/main_version_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/base_black_666666"
+            android:textSize="12dp"
+            tools:text="68%的用户正在使用最新版本V1.0.1" />
+
+        <TextView
+            android:id="@+id/main_version_info_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/base_black_666666"
+            android:textSize="12dp"
+            tools:text="1.修复了部分bug\n2.更好的优化了支付流程\n3.提升了安全性" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginStart="3dp">
+
+            <TextView
+                android:id="@+id/main_version_info_btn_negative"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/base_bg_white_border_1_orange_f0932e_corner_5"
+                android:gravity="center"
+                android:textColor="@color/base_orange_F0932E"
+                android:textSize="14dp"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/main_version_info_btn_positive"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/base_bg_orange_f0932e_corner_5"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

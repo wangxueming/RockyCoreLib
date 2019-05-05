@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:id="@+id/ll_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@id/ll_nav_container"
+        android:background="@color/base_gray_999999" />
+
+    <com.rocky.core.widget.NoTouchViewPager
+        android:id="@+id/vp_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/divider" />
+
+</RelativeLayout>
