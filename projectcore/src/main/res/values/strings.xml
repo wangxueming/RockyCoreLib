@@ -1,0 +1,5 @@
+<resources>
+    <string name="core_network_anomaly">啊哦，网络开小差了~</string>
+    <string name="core_tip_plz_install_gallery_app">请安装相册应用后重试</string>
+    <string name="core_tip_plz_install_camera_app">请安装相机应用后重试</string>
+</resources>

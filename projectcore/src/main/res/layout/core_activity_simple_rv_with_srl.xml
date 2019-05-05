@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/core_ll_container"
+    style="@style/base_CommonPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.rocky.customview.widget.WinTopBar
+        android:id="@+id/core_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/core_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/core_fl_refresh_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/core_rv_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:visibility="gone" />
+            <FrameLayout
+                android:id="@+id/core_ll_empty_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <FrameLayout
+                android:id="@+id/core_ll_no_net_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

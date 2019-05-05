@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="base_pop_bottom_anim">
+        <item name="android:windowEnterAnimation">@anim/base_slide_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/base_slide_bottom_out</item>
+    </style>
+</resources>

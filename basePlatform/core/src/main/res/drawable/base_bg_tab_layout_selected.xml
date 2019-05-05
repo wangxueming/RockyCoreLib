@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 整个背景色-->
+    <item>
+        <shape>
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+    <item
+        android:width="48dp"
+        android:height="2dp"
+        android:gravity="bottom|center_horizontal">
+        <shape>
+            <solid android:color="@color/base_orange_F0932E" />
+        </shape>
+    </item>
+</layer-list>

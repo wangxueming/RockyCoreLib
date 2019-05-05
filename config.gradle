@@ -1,0 +1,36 @@
+/**全局配置信息及第三方依赖统一管理*/
+project.ext {
+    //统一设置APP配置
+    setDefaultConfig = { extension ->
+        //相对于APP中的build.gradle android {}的内容
+        extension.android {
+            compileSdkVersion rootProject.compileSdkVersion
+            buildToolsVersion rootProject.buildToolsVersion
+            defaultConfig {
+                minSdkVersion rootProject.minSdkVersion
+                targetSdkVersion rootProject.targetSdkVersion
+                versionCode getAppVersionCode()
+                versionName rootProject.versionName
+
+                testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+            }
+        }
+    }
+}
+
+def getAppVersionCode() {
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            //此处可以根据实际情况使用git rev-list --all --count
+            commandLine 'git', 'rev-list', '--first-parent', '--count', 'HEAD'
+            standardOutput = stdout
+        }
+        logger.info('=========!verCode=' + stdout.toString().trim() + "   ")
+        return Integer.parseInt(stdout.toString().trim())
+    }
+    catch (ignored) {
+        println "===================error code!"
+        return -1
+    }
+}

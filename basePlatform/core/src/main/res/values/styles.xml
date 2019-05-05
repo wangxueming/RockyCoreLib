@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="base_SingleLineEditText">
+        <!-- 注意LoginActivity除外 -->
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="base_SingleLineEditText.PhoneNumber">
+        <!-- 注意LoginActivity除外 -->
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">11</item>
+        <item name="android:digits">1234567890</item>
+    </style>
+
+    <style name="base_SingleLineEditText.Password">
+        <!-- 注意LoginActivity除外 -->
+        <item name="android:inputType">textPassword</item>
+        <item name="android:maxLength">16</item>
+        <item name="android:digits">@string/base_filter_pwdcode</item>
+    </style>
+
+    <style name="base_SingleLineEditText.SmsCode">
+        <!-- 注意LoginActivity除外 -->
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">6</item>
+        <item name="android:digits">1234567890</item>
+    </style>
+
+    <style name="base_SingleLineEditText.Number">
+        <!-- 注意LoginActivity除外 -->
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="base_SingleLineEditText.NumberDecimal">
+        <!-- 注意LoginActivity除外 -->
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="base_HorizontalLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/base_gray_CCCCCC</item>
+    </style>
+
+    <style name="base_TabLayoutTextStyle">
+        <item name="android:textSize">15dp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="base_AppTheme" parent="base_AppTheme.Base"></style>
+
+    <style name="base_AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/base_colorPrimaryDark</item>
+        <item name="colorAccent">@color/base_colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/base_CommonActivityAnimation</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <!--Activity过渡动画-->
+    <style name="base_CommonActivityAnimation">
+        <item name="android:activityOpenEnterAnimation">@anim/base_activity_open_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/base_activity_open_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/base_activity_close_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/base_activity_close_exit</item>
+    </style>
+
+    <style name="base_AppTheme.NoTitleBar" parent="base_AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="base_NumberProgressBar_Default">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="progress_max">100</item>
+        <item name="progress_current">0</item>
+
+        <item name="progress_unreached_color">#CCCCCC</item>
+        <item name="progress_reached_color">#3498DB</item>
+
+        <item name="progress_text_size">10dp</item>
+        <item name="progress_text_color">#3498DB</item>
+
+        <item name="progress_reached_bar_height">1.5dp</item>
+        <item name="progress_unreached_bar_height">0.75dp</item>
+    </style>
+
+    <style name="base_CommonDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/base_win_dialog_show</item>
+        <item name="android:windowExitAnimation">@anim/base_win_dialog_hide</item>
+    </style>
+
+    <!-- 一个很正常的样式 @android:style/Theme.Dialog-->
+    <style name="base_Win.Dialog.CustomStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 对话框是否有遮盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 对话框出现时背景是否变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <!-- 输入法弹出时自适应 -->
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="base_CommonPage">
+        <item name="android:background">@color/base_gray_F4F4F4</item>
+    </style>
+
+    <style name="base_Divide">
+        <item name="android:background">@color/base_gray_DFDFDF</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="base_VerticalDivide">
+        <item name="android:background">@color/base_gray_DFDFDF</item>
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="base_CommonListItem">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="base_CommonListItem.50Height">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="base_CommonListItem.40Height">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+</resources>

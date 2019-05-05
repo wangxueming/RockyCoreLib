@@ -1,0 +1,44 @@
+apply from: "${rootProject.rootDir}/config.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    project.ext.setDefaultConfig project
+
+    defaultConfig {
+        //强制前缀
+//        resourcePrefix "about_"
+        //MultiDex分包方法
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+//    implementation "com.android.support:support-v4:$rootProject.androidSupportSdkVersion"
+//    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+//    implementation 'com.squareup.retrofit2:retrofit-mock:2.3.0'
+//    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+//    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.google.code.gson:gson:2.8.1'
+
+    implementation project(':basePlatform:core')
+    //implementation project(path: ':common')
+}

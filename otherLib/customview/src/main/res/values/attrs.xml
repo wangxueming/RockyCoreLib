@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--星星控件-->
+    <declare-styleable name="RatingBar" tools:ignore="ResourceName">
+        <attr name="starImageSize" format="dimension" />
+        <attr name="starImageWidth" format="dimension" />
+        <attr name="starImageHeight" format="dimension" />
+        <attr name="starImagePadding" format="dimension" />
+        <attr name="starCount" format="integer" />
+        <attr name="starNum" format="integer" />
+        <attr name="starEmpty" format="reference" />
+        <attr name="starFill" format="reference" />
+        <attr name="starHalf" format="reference" />
+        <attr name="clickable" format="boolean" />
+        <attr name="halfstart" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RatingBarV2">
+        <!--星星间距-->
+        <attr name="starDistance" format="dimension" />
+        <!--星星大小-->
+        <attr name="starSize" format="dimension" />
+        <!--星星个数-->
+        <attr name="starCountV2" format="integer" />
+        <!--星星空图-->
+        <attr name="starEmptyV2" format="reference" />
+        <!--星星满图-->
+        <attr name="starFillV2" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="cusview_WinTopBar">
+        <attr name="bar_background" format="integer" tools:ignore="ResourceName" />
+        <attr name="bar_titleText" format="string" tools:ignore="ResourceName" />
+        <attr name="bar_titleTextColor" format="color" tools:ignore="ResourceName" />
+        <attr name="bar_rightText" format="string" tools:ignore="ResourceName" />
+        <attr name="bar_rightIcon" format="reference" tools:ignore="ResourceName" />
+        <attr name="bar_rightTextColor" format="color" tools:ignore="ResourceName" />
+        <attr name="bar_leftText" format="string" tools:ignore="ResourceName" />
+        <attr name="bar_leftIcon" format="reference" tools:ignore="ResourceName" />
+        <attr name="bar_leftTextColor" format="color" tools:ignore="ResourceName" />
+        <attr name="bar_showDivider" format="boolean" tools:ignore="ResourceName" />
+        <attr name="bar_leftVisibility" tools:ignore="ResourceName">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="4" />
+            <enum name="gone" value="8" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="cusview_TimeTextView">
+    </declare-styleable>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/core_tv_camera"
+            style="@style/base_CommonListItem.50Height"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:gravity="center"
+            android:text="拍照"
+            android:textColor="@color/base_black_282828" />
+
+        <View style="@style/base_Divide" />
+
+        <TextView
+            android:id="@+id/core_tv_album"
+            style="@style/base_CommonListItem.50Height"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="从相册中选择"
+            android:textColor="@color/base_black_282828" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/core_tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:gravity="center"
+            android:paddingLeft="100dp"
+            android:paddingRight="100dp"
+            android:text="@string/base_cancel"
+            android:textColor="@color/base_black_282828" />
+    </LinearLayout>
+
+
+</LinearLayout>
