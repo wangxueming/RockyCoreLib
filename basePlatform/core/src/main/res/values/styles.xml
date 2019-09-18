@@ -25,6 +25,12 @@
         <item name="android:digits">@string/base_filter_pwdcode</item>
     </style>
 
+    <style name="base_SingleLineEditText.TradePassword">
+        <!-- 注意LoginActivity除外 -->
+        <item name="android:inputType">textPassword</item>
+        <item name="android:maxLength">16</item>
+    </style>
+
     <style name="base_SingleLineEditText.SmsCode">
         <!-- 注意LoginActivity除外 -->
         <item name="android:inputType">number</item>

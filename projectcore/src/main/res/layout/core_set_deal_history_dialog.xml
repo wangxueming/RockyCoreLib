@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/base_white_corner_5"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/core_dlg_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="已成交记录"
+        android:textColor="#ff282828"
+        android:textSize="16dp" />
+
+    <View
+        android:id="@+id/core_dlg_top_v_divide"
+        style="@style/base_Divide" />
+
+    <FrameLayout
+        android:id="@+id/core_fl_refresh_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:id="@+id/core_tv_history_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8dp"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                tools:text="2019-07-01 15:32:42 一笔折让比例为42%的转让成交的转让成交的转让成交的转让成交的转让成交" />
+
+            <TextView
+                android:id="@+id/core_tv_history_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:lineSpacingExtra="8dp"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                tools:text="2019-07-01 15:32:42 一笔折让比例为42%的转让成交的转让成交的转让成交的转让成交的转让成交" />
+
+            <TextView
+                android:id="@+id/core_tv_history_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:lineSpacingExtra="8dp"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                tools:text="2019-07-01 15:32:42 的转让成交的转让成交的转让成交的转让成交的转让成交的转让成交%的转让成交" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/core_ll_empty_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:text="暂无成交记录！"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/base_gray_EFEFEF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/core_dlg_tv_negative"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/base_cancel"
+            android:textColor="@color/base_colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/base_gray_EFEFEF" />
+
+        <TextView
+            android:id="@+id/core_dlg_tv_positive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/base_confirm"
+            android:textColor="@color/base_colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

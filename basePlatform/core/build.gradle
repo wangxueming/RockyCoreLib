@@ -12,6 +12,10 @@ android {
     }
 
     buildTypes {
+        preRelease {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -74,6 +78,13 @@ dependencies {
     //日志
     api "com.orhanobut:logger:2.1.1"
 
+    //Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+    //joor
+    api group: 'org.jooq', name: 'joor-java-8', version: '0.9.9'
+
     //fastJson
     api 'com.alibaba:fastjson:1.2.54'
 
@@ -104,7 +115,7 @@ dependencies {
     api 'id.zelory:compressor:2.1.0'
 
     //仿ios 的PickerView时间选择器和条件选择器
-    api "com.contrarywind:Android-PickerView:3.2.7"
+    api "com.contrarywind:Android-PickerView:4.1.8"
 
     //smartRefresh 上拉加载
     api "com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1"
@@ -114,7 +125,7 @@ dependencies {
     api "org.greenrobot:eventbus:3.0.0"
 
     //Banner轮播图
-    api "com.youth.banner:banner:1.4.10"
+    api "com.youth.banner:banner:1.4.11"
 
     //Android屏幕适配 ,暂时不用
     // api rootProject.ext.dependencies["autolayout"]
@@ -135,6 +146,8 @@ dependencies {
 
     //LeakCanary-android
     debugApi "com.squareup.leakcanary:leakcanary-android:1.5.1"
+    //preRelease不检测
+    preReleaseApi "com.squareup.leakcanary:leakcanary-android-no-op:1.5.1"
     //release不检测
     releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:1.5.1"
 
@@ -145,7 +158,14 @@ dependencies {
     api "com.kaopiz:kprogresshud:1.2.0"
 
     //个推
-    api 'com.getui:sdk:2.12.5.0'
+//    api 'com.getui:sdk:2.12.5.0'
+
+    //极光
+    api 'cn.jiguang.sdk:jpush:3.3.0'  // 此处以JPush 3.3.0 版本为例。
+    api 'cn.jiguang.sdk:jcore:2.0.1'  // 此处以JCore 2.0.1 版本为例。
+
+    //引导页
+    api 'agency.tango.android:material-intro-screen:0.0.5'
 
     //#Deep Clone
 //    api 'org.jadira.cloning:cloning:3.1.0.CR8'

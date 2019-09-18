@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rocky.projectcore">
+    package="com.rockyw.projectcore">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -19,17 +19,17 @@
 
     <application>
         <meta-data
-            android:name="com.rocky.projectcore.glide.OkHttpGlideModule"
+            android:name="com.rockyw.projectcore.glide.OkHttpGlideModule"
             android:value="GlideModule" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.rocky.weather.fileprovider"
+            android:authorities="com.rockyw.weather.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/rocky_file_paths" />
+                android:resource="@xml/rockyw_file_paths" />
         </provider>
 
         <activity
@@ -46,6 +46,6 @@
             android:screenOrientation="portrait" />
 
 
-        <service android:name=".service.DownloadService" />
+        <service android:name=".service.download.DownloadIntentService" />
     </application>
 </manifest>

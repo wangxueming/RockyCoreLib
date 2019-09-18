@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/base_white_corner_5"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="验证码"
+            android:textColor="#ff282828"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/core_iv_close_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:foregroundGravity="center"
+            android:padding="11dp"
+            android:src="@drawable/core_ic_close_dlg" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/core_dlg_top_v_divide"
+        style="@style/base_Divide" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="20dp"
+        android:minHeight="88dp"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/core_et_verify_code"
+                style="@style/base_SingleLineEditText.SmsCode"
+                android:digits="@string/base_filter_pwdcode"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="7dp"
+                android:layout_weight="2"
+                android:paddingStart="5dp"
+                android:gravity="center_vertical|start"
+                android:background="@drawable/base_white_border_dfdfdf_corner_0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/core_iv_verify_code"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@id/core_iv_verify_code"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="@id/core_et_verify_code"
+                app:layout_constraintLeft_toRightOf="@id/core_et_verify_code"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/core_et_verify_code" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="请填写图片中的字符，不区分大小写"
+            android:textColor="#ff282828"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/base_gray_EFEFEF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/core_dlg_tv_negative"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/base_cancel"
+            android:textColor="@color/base_colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/base_gray_EFEFEF" />
+
+        <TextView
+            android:id="@+id/core_dlg_tv_positive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/base_confirm"
+            android:textColor="@color/base_colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

@@ -24,12 +24,11 @@ android {
         multiDexEnabled true
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
     buildTypes {
+        preRelease {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -46,9 +45,11 @@ dependencies {
 
     //黄油刀
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
-
     //ARouter
     annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
+    //Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
 
     api project(path: ':basePlatform:core')
     api project(path: ':basePlatform:net')

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/base_white_corner_5"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="请输入支付密码"
+        android:textColor="@color/base_black_282828"
+        android:textSize="16dp" />
+
+    <View style="@style/base_Divide" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="105dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/product_tv_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="22dp"
+            android:text="￥ 150,000"
+            android:textColor="@color/base_black_282828"
+            android:textSize="24dp"
+            tools:visibility="gone" />
+
+        <EditText
+            android:id="@+id/product_trade_pwd"
+            style="@style/base_SingleLineEditText.TradePassword"
+            android:layout_height="35dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/base_white_border_dfdfdf_corner_0"
+            android:hint="@string/core_hint_enter_transaction_pwd"
+            android:paddingStart="12dp"
+            android:paddingTop="0dp" />
+    </LinearLayout>
+
+    <View style="@style/base_Divide" />
+
+    <LinearLayout
+        style="@style/base_CommonListItem.40Height"
+        android:background="@null">
+
+        <TextView
+            android:id="@+id/product_tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/core_selector_enter_pwd_left_btn"
+            android:gravity="center"
+            android:text="@string/base_cancel"
+            android:textColor="@color/base_selector_txt_color_pwd_enter"
+            android:textSize="15dp"
+            tools:enabled="false" />
+
+        <View style="@style/base_VerticalDivide" />
+
+        <TextView
+            android:id="@+id/product_tv_confirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/core_selector_enter_pwd_right_btn"
+            android:gravity="center"
+            android:text="@string/core_pay"
+            android:textColor="@color/base_selector_txt_color_pwd_enter"
+            android:textSize="15dp"
+            tools:enabled="false" />
+    </LinearLayout>
+</LinearLayout>

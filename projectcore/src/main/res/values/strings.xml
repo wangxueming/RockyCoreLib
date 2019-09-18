@@ -2,4 +2,9 @@
     <string name="core_network_anomaly">啊哦，网络开小差了~</string>
     <string name="core_tip_plz_install_gallery_app">请安装相册应用后重试</string>
     <string name="core_tip_plz_install_camera_app">请安装相机应用后重试</string>
+    <string name="core_all">全部</string>
+    <string name="core_agree_continue">同意并继续</string>
+    <string name="core_hint_enter_transaction_pwd">请输入交易密码</string>
+    <string name="core_pay">支付</string>
+    <string name="core_invest_result">投资结果</string>
 </resources>

@@ -1,17 +1,31 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rocky.core" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rockyw.core">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Required -->
+    <permission
+        android:name="com.rockyw.weather.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <!-- Required  一些系统要求的权限，如访问网络等-->
+    <uses-permission android:name="com.rockyw.weather.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application>
 
-        <meta-data android:value="5cc65b690cafb2feb3000b6a" android:name="UMENG_APPKEY"/>
-        <meta-data android:value="rocky" android:name="UMENG_CHANNEL"/>
-
-        <service
-            android:name=".push.GeTuiPushService"
-            android:exported="true"
-            android:label="PushService"
-            android:process=":pushservice" />
-        <service android:name=".push.GeTuiIntentService"/>
+        <!--<service-->
+            <!--android:name=".push.GeTuiPushService"-->
+            <!--android:exported="true"-->
+            <!--android:label="PushService"-->
+            <!--android:process=":pushservice" />-->
+        <!--<service android:name=".push.GeTuiIntentService"/>-->
     </application>
 </manifest>

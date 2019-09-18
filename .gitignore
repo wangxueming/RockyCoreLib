@@ -9,3 +9,5 @@
 .externalNativeBuild
 release/*
 release
+preRelease/*
+preRelease

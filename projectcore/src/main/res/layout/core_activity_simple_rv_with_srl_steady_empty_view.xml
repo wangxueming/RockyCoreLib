@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.rocky.customview.widget.WinTopBar
+    <com.rockyw.customview.widget.WinTopBar
         android:id="@+id/core_top_bar"
         android:layout_width="match_parent"
         android:layout_height="44dp" />

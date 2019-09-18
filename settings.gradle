@@ -1,3 +1,4 @@
-include ':app', ':projectcore' //@see README.md
-include ':basePlatform:router', ':basePlatform:core', ':basePlatform:net', ':basePlatform:locate'
+include ':app'
+include ':projectcore' //@see README.md
+include ':basePlatform:router' , ':basePlatform:core', ':basePlatform:net', ':basePlatform:locate'
 include ':otherLib:customview'

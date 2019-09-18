@@ -58,4 +58,5 @@
     <color name="base_orange_FFAD55">#FFAD55</color>
     <color name="base_brown_59f88302">#59f88302</color>
     <color name="base_green_4DD965">#4dd965</color>
+    <color name="base_red">#FF0000</color>
 </resources>
