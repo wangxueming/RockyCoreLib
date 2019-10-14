@@ -1,8 +1,8 @@
-package com.rocky.weather;
+package com.rockyw.weather;
 
-import com.rocky.projectcore.common.router.CommonServerData;
-import com.rocky.projectcore.net.ServerConfig;
-import com.rocky.projectcore.util.DebugUtil;
+import com.rockyw.projectcore.common.router.CommonServerData;
+import com.rockyw.projectcore.net.ServerConfig;
+import com.rockyw.projectcore.util.DebugUtil;
 
 /**
  *

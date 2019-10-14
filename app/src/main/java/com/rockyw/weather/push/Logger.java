@@ -1,4 +1,4 @@
-package com.rocky.fintransation.push;
+package com.rockyw.weather.push;
 
 import android.util.Log;
 

@@ -2,7 +2,7 @@ package com.rockyw.projectcore.net;
 
 import android.text.TextUtils;
 
-import com.rockyw.projectcore.common.router.CommonServerData;
+import com.winfae.projectcore.common.router.WfCommonServerData;
 
 /**
  *
@@ -26,7 +26,7 @@ public class ServerConfig {
     static final String H5_PRESET_SERVER_URL = "https://h5test.winfae.com";
     static final String H5_RELEASE_SERVER_URL = "https://h5.winfae.com";
     /**
-     * 更改默认服务器时，不需要改这个字段，修改{@link com.rockyw.weather.AppConfigLauncher}内的 SERVER_TYPE 字段即可
+     * 更改默认服务器时，不需要改这个字段，修改{@link com.rockyw.fintransation.AppConfigLauncher}内的 SERVER_TYPE 字段即可
      */
     private static int SERVER_TYPE;
     private static String SERVER_FLAVOR;
@@ -40,11 +40,11 @@ public class ServerConfig {
     }
 
     public static String getServer() {
-        if (SERVER_TYPE == CommonServerData.T_SERVICE_DEBUG) {
+        if (SERVER_TYPE == WfCommonServerData.T_SERVICE_DEBUG) {
             return TextUtils.equals(SERVER_FLAVOR, FLAVOR_ENV1) ? DEV_SERVER_URL : DEV2_SERVER_URL;
-        } else if (SERVER_TYPE == CommonServerData.T_SERVICE_PRESET) {
+        } else if (SERVER_TYPE == WfCommonServerData.T_SERVICE_PRESET) {
             return PRESET_SERVER_URL;
-        } else if (SERVER_TYPE == CommonServerData.T_SERVICE_RELEASE) {
+        } else if (SERVER_TYPE == WfCommonServerData.T_SERVICE_RELEASE) {
             return RELEASE_SERVER_URL;
         } else {
             return DEV_SERVER_URL;
@@ -52,11 +52,11 @@ public class ServerConfig {
     }
 
     public static String getH5Server() {
-        if (SERVER_TYPE == CommonServerData.T_SERVICE_DEBUG) {
+        if (SERVER_TYPE == WfCommonServerData.T_SERVICE_DEBUG) {
             return TextUtils.equals(SERVER_FLAVOR, FLAVOR_ENV1) ? H5_DEV_SERVER_URL : H5_DEV2_SERVER_URL;
-        } else if (SERVER_TYPE == CommonServerData.T_SERVICE_PRESET) {
+        } else if (SERVER_TYPE == WfCommonServerData.T_SERVICE_PRESET) {
             return H5_PRESET_SERVER_URL;
-        } else if (SERVER_TYPE == CommonServerData.T_SERVICE_RELEASE) {
+        } else if (SERVER_TYPE == WfCommonServerData.T_SERVICE_RELEASE) {
             return H5_RELEASE_SERVER_URL;
         } else {
             return H5_DEV_SERVER_URL;

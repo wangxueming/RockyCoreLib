@@ -1,4 +1,4 @@
-package com.rocky.weather;
+package com.rockyw.weather;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -7,18 +7,15 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.rocky.core.base.mvp.BaseVpActivity;
-import com.rocky.core.util.AppUtils;
-import com.rocky.core.util.Tip;
-import com.rocky.core.util.logger.L;
-import com.rocky.core.widget.dialog.WinConfirmDialog;
-import com.rocky.weather.widget.VersionInfoDialog;
-import com.rocky.projectcore.UrlServiceManager;
-import com.rocky.projectcore.common.bean.VersionResponse;
-import com.rocky.projectcore.common.router.CommonServerData;
-import com.rocky.projectcore.common.router.RouterUrl;
-import com.rocky.projectcore.config.AppConfig;
-import com.rocky.projectcore.publicserver.IPublicService;
+import com.rockyw.core.base.mvp.BaseVpActivity;
+import com.rockyw.core.util.AppUtils;
+import com.rockyw.core.util.logger.L;
+import com.rockyw.core.widget.dialog.WinConfirmDialog;
+import com.rockyw.projectcore.common.bean.VersionResponse;
+import com.rockyw.projectcore.common.router.CommonServerData;
+import com.rockyw.projectcore.common.router.RouterUrl;
+import com.rockyw.projectcore.config.AppConfig;
+import com.rockyw.weather.widget.VersionInfoDialog;
 
 import butterknife.BindView;
 
@@ -32,7 +29,7 @@ import butterknife.BindView;
 @Route(path = RouterUrl.SPLASH_PAGE)
 public class SplashActivity extends BaseVpActivity<ISplashContract.View, ISplashContract.Presenter> implements ISplashContract.View {
 
-    private static final int MIN_ANIMATION_DURATION = 1000;
+    private static final int MIN_ANIMATION_DURATION = 5000;
 
     @BindView(R2.id.main_tv_service_type)
     TextView mServiceTypeTv;
@@ -42,64 +39,22 @@ public class SplashActivity extends BaseVpActivity<ISplashContract.View, ISplash
 
     private boolean isCanClickAgain = true;
 
-    private IPublicService.Observer mPublicObserver = new IPublicService.Observer() {
-        @Override
-        public void onStart() {
-            isCanClickAgain = false;
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Tip.onCommonNotice("开始下载");
-                }
-            });
-        }
-
-        @Override
-        public void onProgress(float downloaded, long total) {
-            isCanClickAgain = false;
-        }
-
-        @Override
-        public void onFailure(String msg) {
-            isCanClickAgain = true;
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Tip.onCommonNotice("下载失败");
-                }
-            });
-        }
-
-        @Override
-        public void onDone() {
-            isCanClickAgain = true;
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Tip.onCommonNotice("下载完成");
-                }
-            });
-        }
-    };
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        startAppLogic();
-//        jumpToTestPage();
+//        startAppLogic();
+        jumpToTestPage();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        registerObserve();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        unRegisterObserve();
     }
 
     @Override
@@ -149,7 +104,6 @@ public class SplashActivity extends BaseVpActivity<ISplashContract.View, ISplash
                         .setPositiveClickListener(new VersionInfoDialog.ClickListener() {
                             @Override
                             public void onClick(Dialog dialog) {
-                                startDownloadApk(response.data.downloadUrl, response.data.versionNumber);
                             }
                         })
                         .build();
@@ -164,7 +118,6 @@ public class SplashActivity extends BaseVpActivity<ISplashContract.View, ISplash
                         .setPositiveClickListener(new VersionInfoDialog.ClickListener() {
                             @Override
                             public void onClick(Dialog dialog) {
-                                startDownloadApk(response.data.downloadUrl, response.data.versionNumber);
                             }
                         })
                         .setNegativeClickListener(new VersionInfoDialog.ClickListener() {
@@ -199,6 +152,7 @@ public class SplashActivity extends BaseVpActivity<ISplashContract.View, ISplash
                     .setNegativeClickListener(new WinConfirmDialog.ClickListener() {
                         @Override
                         public void onClick(Dialog dialog) {
+                            mCheckInfoFailDlg.cancel();
                             finish();
                         }
                     })
@@ -214,8 +168,9 @@ public class SplashActivity extends BaseVpActivity<ISplashContract.View, ISplash
      * 应用启动逻辑
      */
     private void startAppLogic() {
-        getPresenter().checkVersion();
+//        getPresenter().checkVersion();
         mStartCheckVersionTimeMillis = System.currentTimeMillis();
+        jumpToHome();
     }
 
     private void jumpToHome() {
@@ -244,30 +199,11 @@ public class SplashActivity extends BaseVpActivity<ISplashContract.View, ISplash
 
     private void jumpToHomeInterval() {
         L.i("设备信息[UMENG_CHANNEL]:" + AppUtils.getAppMetaData(getContext(), "UMENG_CHANNEL"));
-        ARouter.getInstance().build(RouterUrl.HOME).navigation();
+        ARouter.getInstance().build(RouterUrl.STOCK_DATA).navigation();
         finish();
     }
 
-    private void startDownloadApk(String downloadUrl, String versionName) {
-        if (!isCanClickAgain) {
-            return;
-        }
-        isCanClickAgain = false;
-        IPublicService publicService = UrlServiceManager.getPublicService();
-        publicService.startDownloadApk(downloadUrl, versionName);
-    }
-
-    private void registerObserve() {
-        IPublicService publicService = UrlServiceManager.getPublicService();
-        publicService.registerObserver(mPublicObserver);
-    }
-
-    private void unRegisterObserve() {
-        IPublicService publicService = UrlServiceManager.getPublicService();
-        publicService.unregisterObserver(mPublicObserver);
-    }
-
     private void jumpToTestPage() {
-        ARouter.getInstance().build(RouterUrl.ACCOUNT_ASSETS_PROOF).greenChannel().withFlags(Intent.FLAG_ACTIVITY_NEW_TASK).navigation();
+        ARouter.getInstance().build(RouterUrl.STOCK_DATA).greenChannel().withFlags(Intent.FLAG_ACTIVITY_NEW_TASK).navigation();
     }
 }

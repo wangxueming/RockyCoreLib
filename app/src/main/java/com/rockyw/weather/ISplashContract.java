@@ -1,9 +1,9 @@
-package com.rocky.weather;
+package com.rockyw.weather;
 
-import com.rocky.core.base.mvp.inter.IModel;
-import com.rocky.core.base.mvp.inter.IPresenter;
-import com.rocky.core.base.mvp.inter.IView;
-import com.rocky.projectcore.common.bean.VersionResponse;
+import com.rockyw.core.base.mvp.inter.IModel;
+import com.rockyw.core.base.mvp.inter.IPresenter;
+import com.rockyw.core.base.mvp.inter.IView;
+import com.rockyw.projectcore.common.bean.VersionResponse;
 
 import io.reactivex.Observable;
 

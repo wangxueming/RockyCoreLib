@@ -1,6 +1,7 @@
 apply from: "${rootProject.rootDir}/config.gradle"
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     project.ext.setDefaultConfig project
@@ -44,7 +45,7 @@ android {
                 GETUI_APP_ID : "TGeNd6cOo69VCx9gXF5YY6",
                 GETUI_APP_KEY : "0nwRjjyfoaANrr0xooPXj",
                 GETUI_APP_SECRET : "peY1o4FasDAe2yDVvX37z",
-                JPUSH_PKGNAME : "com.winfae.fintransation",
+                JPUSH_PKGNAME : "com.rockyw.weather",
                 JPUSH_APPKEY : "ac79ccf1c5f1907046aeb54a", //JPush 上注册的包名对应的 Appkey.
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
                 UMENG_APPKEY : "5cc65b690cafb2feb3000b6a",
@@ -95,7 +96,7 @@ android {
                     variant.outputs.each { output ->
                         def outputFile = output.outputFile
                         if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                            def fileName = "winfae_preReleasev${rootProject.ext.versionName}_${releaseTime()}.apk"
+                            def fileName = "rockyw_preReleasev${rootProject.ext.versionName}_${releaseTime()}.apk"
                             output.apkData.outputFileName = fileName
                         }
                     }

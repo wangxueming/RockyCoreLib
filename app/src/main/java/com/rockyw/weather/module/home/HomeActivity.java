@@ -1,4 +1,4 @@
-package com.rocky.weather.module.home;
+package com.rockyw.weather.module.home;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -11,20 +11,20 @@ import android.widget.LinearLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.rocky.core.base.mvc.BaseVcActivity;
-import com.rocky.core.widget.NoTouchViewPager;
-import com.rocky.core.widget.dialog.WinConfirmDialog;
-import com.rocky.weather.R;
-import com.rocky.weather.R2;
-import com.rocky.weather.net.Server;
-import com.rocky.projectcore.UrlServiceManager;
-import com.rocky.projectcore.common.bean.Merge2Response;
-import com.rocky.projectcore.common.bean.QualifyInvestorResponse;
-import com.rocky.projectcore.common.router.CommonAction;
-import com.rocky.projectcore.common.router.RouterUrl;
-import com.rocky.projectcore.login.IAccountService;
-import com.rocky.projectcore.net.BaseResponse;
-import com.rocky.projectcore.net.CommonObserver;
+import com.rockyw.core.base.mvc.BaseVcActivity;
+import com.rockyw.core.widget.NoTouchViewPager;
+import com.rockyw.core.widget.dialog.WinConfirmDialog;
+import com.rockyw.weather.R;
+import com.rockyw.weather.R2;
+import com.rockyw.weather.net.Server;
+import com.rockyw.projectcore.UrlServiceManager;
+import com.rockyw.projectcore.common.bean.Merge2Response;
+import com.rockyw.projectcore.common.bean.QualifyInvestorResponse;
+import com.rockyw.projectcore.common.router.CommonAction;
+import com.rockyw.projectcore.common.router.RouterUrl;
+import com.rockyw.projectcore.service.login.IAccountService;
+import com.rockyw.projectcore.net.BaseResponse;
+import com.rockyw.projectcore.net.CommonObserver;
 
 import java.util.ArrayList;
 import java.util.List;

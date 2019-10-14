@@ -1,11 +1,11 @@
-package com.winfae.fintransation.push;
+package com.rockyw.weather.push;
 
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.util.SparseArray;
 
-import com.winfae.core.util.logger.L;
+import com.rockyw.core.util.logger.L;
 
 import java.util.Locale;
 import java.util.Set;
@@ -55,6 +55,7 @@ public class TagAliasOperatorHelper {
         }
         return mInstance;
     }
+
     public void init(Context context){
         if(context != null) {
             this.context = context.getApplicationContext();

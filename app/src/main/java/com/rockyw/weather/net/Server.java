@@ -1,11 +1,11 @@
-package com.rocky.weather.net;
+package com.rockyw.weather.net;
 
 import android.content.Context;
 
-import com.rocky.core.BaseApplication;
-import com.rocky.core.util.AppUtils;
-import com.rocky.net.BaseServer;
-import com.rocky.projectcore.net.ServerConfig;
+import com.rockyw.core.BaseApplication;
+import com.rockyw.core.util.AppUtils;
+import com.rockyw.net.BaseServer;
+import com.rockyw.projectcore.net.ServerConfig;
 
 import java.util.HashMap;
 

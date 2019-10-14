@@ -1,7 +1,7 @@
-package com.rocky.weather;
+package com.rockyw.weather;
 
-import com.rocky.projectcore.common.bean.VersionResponse;
-import com.rocky.weather.net.Server;
+import com.rockyw.projectcore.common.bean.VersionResponse;
+import com.rockyw.weather.net.Server;
 
 import io.reactivex.Observable;
 

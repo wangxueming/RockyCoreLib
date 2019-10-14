@@ -6,7 +6,6 @@ package com.rockyw.projectcore.common.router;
  * @date: 2019/2/14
  */
 public interface CommonServerData {
-    String FILE_NAME_SAVE_SERVER = "WF_FinT_Server_Type";
 
     int T_SERVICE_DEBUG = 1;
     int T_SERVICE_PRESET = 2;

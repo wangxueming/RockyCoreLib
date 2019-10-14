@@ -1,7 +1,7 @@
 package com.rockyw.projectcore.service.buriedpoint;
 
 import com.alibaba.android.arouter.facade.template.IProvider;
-import com.rockyw.projectcore.common.bean.RedEnvelopCreditBean;
+import com.winfae.projectcore.common.bean.RedEnvelopCreditBean;
 
 /**
  * 埋点数据存放点

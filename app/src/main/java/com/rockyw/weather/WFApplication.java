@@ -1,15 +1,20 @@
-package com.rocky.weather;
+package com.rockyw.weather;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
+import com.rockyw.projectcore.service.login.IAccountService;
+import com.rockyw.weather.data.DaoMaster;
+import com.rockyw.weather.data.DaoSession;
+import com.rockyw.weather.data.MyDataBaseHelper;
 import com.umeng.commonsdk.UMConfigure;
-import com.rocky.projectcore.common.router.RouterUrl;
-import com.rocky.core.BaseApplication;
-import com.rocky.core.LifecycleHandler;
-import com.rocky.core.base.BaseEventBusBean;
-import com.rocky.core.util.DimensionUtil;
-import com.rocky.projectcore.UrlServiceManager;
-import com.rocky.projectcore.login.IAccountService;
-import com.rocky.router.WFRouter;
+import com.rockyw.projectcore.common.router.RouterUrl;
+import com.rockyw.core.BaseApplication;
+import com.rockyw.core.LifecycleHandler;
+import com.rockyw.core.base.BaseEventBusBean;
+import com.rockyw.core.util.DimensionUtil;
+import com.rockyw.projectcore.UrlServiceManager;
+import com.rockyw.router.WFRouter;
+
+import org.greenrobot.greendao.database.Database;
 
 /**
  * 壳工程的Application
@@ -50,6 +55,7 @@ public class WFApplication extends BaseApplication {
         configUMeng();
 
         DimensionUtil.init(this);
+        initDatabase();
     }
 
     @Override
@@ -91,9 +97,24 @@ public class WFApplication extends BaseApplication {
 
             @Override
             public void onLogout() {
-                com.rocky.weather.net.Server.resetServerApi();
+                com.rockyw.weather.net.Server.resetServerApi();
                 AppConfigLauncher.reInit();
             }
         });
     }
+
+
+    private void initDatabase() {
+        // DevOpenHelper 在数据库升级时会删除所有的表，release 版本要记得换回来
+        MyDataBaseHelper helper = new MyDataBaseHelper(this, "stock_rocky.db");
+        Database database = helper.getWritableDb();
+        mDaoSession = new DaoMaster(database).newSession();
+    }
+
+    private DaoSession mDaoSession;
+
+    public DaoSession getDaoSession() {
+        return mDaoSession;
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.rocky.weather.widget;
+package com.rockyw.weather.widget;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -7,9 +7,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
-import com.rocky.core.widget.dialog.CenterBaseDialog;
-import com.rocky.weather.R;
-import com.rocky.weather.R2;
+import com.rockyw.core.widget.dialog.CenterBaseDialog;
+import com.rockyw.weather.R;
+import com.rockyw.weather.R2;
 
 import butterknife.BindView;
 

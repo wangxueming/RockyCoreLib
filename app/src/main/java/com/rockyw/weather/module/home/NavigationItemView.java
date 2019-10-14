@@ -1,4 +1,4 @@
-package com.rocky.weather.module.home;
+package com.rockyw.weather.module.home;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.rocky.weather.R;
+import com.rockyw.weather.R;
 
 /**
  * 首页底部导航栏的布局

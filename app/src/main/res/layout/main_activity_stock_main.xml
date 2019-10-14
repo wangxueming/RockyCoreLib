@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true">
+    <Button
+        android:id="@+id/stock_btn_add_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="载入公司列表"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/stock_tv_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/stock_btn_add_company"
+        app:layout_constraintTop_toTopOf="@id/stock_btn_add_company"
+        app:layout_constraintBottom_toBottomOf="@id/stock_btn_add_company" />
+    <Button
+        android:id="@+id/stock_btn_add_industry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="行业信息"
+        app:layout_constraintTop_toBottomOf="@id/stock_btn_add_company"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <Button
+        android:id="@+id/stock_btn_add_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="个股信息"
+        app:layout_constraintTop_toBottomOf="@id/stock_btn_add_industry"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+</android.support.constraint.ConstraintLayout>

@@ -1,7 +1,7 @@
 package com.rockyw.projectcore.net;
 
-import com.rockyw.projectcore.bean.AnnounceDetailResponse;
-import com.rockyw.projectcore.common.bean.QualifyInvestorResponse;
+import com.rockyw.projectcore.common.bean.AnnounceDetailResponse;
+import com.winfae.projectcore.common.bean.QualifyInvestorResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;

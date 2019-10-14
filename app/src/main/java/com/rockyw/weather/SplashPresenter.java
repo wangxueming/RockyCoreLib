@@ -1,12 +1,12 @@
-package com.rocky.weather;
+package com.rockyw.weather;
 
-import com.rocky.core.base.mvp.BasePresenter;
-import com.rocky.core.util.AppUtils;
-import com.rocky.projectcore.common.bean.VersionResponse;
-import com.rocky.projectcore.UrlServiceManager;
-import com.rocky.projectcore.config.AppConfig;
-import com.rocky.projectcore.net.CommonObserver;
-import com.rocky.projectcore.publicdata.IPublicDataService;
+import com.rockyw.core.base.mvp.BasePresenter;
+import com.rockyw.core.util.AppUtils;
+import com.rockyw.projectcore.common.bean.VersionResponse;
+import com.rockyw.projectcore.UrlServiceManager;
+import com.rockyw.projectcore.config.AppConfig;
+import com.rockyw.projectcore.net.CommonObserver;
+import com.rockyw.projectcore.service.publicdata.IPublicDataService;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

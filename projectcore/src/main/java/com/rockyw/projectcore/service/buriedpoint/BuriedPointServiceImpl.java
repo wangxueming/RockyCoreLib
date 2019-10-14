@@ -5,8 +5,8 @@ import android.content.Context;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.fastjson.JSON;
 import com.rockyw.core.util.SPUtil;
-import com.rockyw.projectcore.common.bean.RedEnvelopCreditBean;
-import com.rockyw.projectcore.common.router.RouterUrl;
+import com.winfae.projectcore.common.bean.RedEnvelopCreditBean;
+import com.winfae.projectcore.common.router.RouterUrl;
 
 /**
  * @author WangXueMing

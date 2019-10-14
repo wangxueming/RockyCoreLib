@@ -2,6 +2,7 @@ apply from: "${rootProject.rootDir}/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'me.tatarka.retrolambda'  //lambda配置
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     project.ext.setDefaultConfig project
@@ -179,4 +180,8 @@ dependencies {
     api 'com.umeng.sdk:analytics:latest.integration'
 
     api 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+}
+
+greendao {
+    schemaVersion 4
 }

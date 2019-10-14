@@ -1,4 +1,4 @@
-package com.winfae.fintransation.push;
+package com.rockyw.weather.push;
 
 import cn.jpush.android.service.JCommonService;
 
