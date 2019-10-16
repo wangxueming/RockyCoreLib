@@ -3,7 +3,7 @@ package com.rockyw.projectcore.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.winfae.projectcore.common.router.WfCommonServerData;
+import com.rockyw.projectcore.common.router.CommonServerData;
 
 /**
  * 获取当前系统调试状态
@@ -15,14 +15,14 @@ import com.winfae.projectcore.common.router.WfCommonServerData;
 public class DebugUtil {
 
     public static void setServiceType(Context context, int type) {
-        SharedPreferences pm = context.getSharedPreferences(WfCommonServerData.FILE_NAME_SAVE_SERVER, Context.MODE_PRIVATE);
+        SharedPreferences pm = context.getSharedPreferences(CommonServerData.FILE_NAME_SAVE_SERVER, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = pm.edit();
-        edit.putInt(WfCommonServerData.DEBUG_SERVICE_TYPE, type);
+        edit.putInt(CommonServerData.DEBUG_SERVICE_TYPE, type);
         edit.apply();
     }
 
     public static int getServiceType(Context context) {
-        SharedPreferences pm = context.getSharedPreferences(WfCommonServerData.FILE_NAME_SAVE_SERVER, Context.MODE_PRIVATE);
-        return pm.getInt(WfCommonServerData.DEBUG_SERVICE_TYPE, WfCommonServerData.T_SERVICE_DEFAULT);
+        SharedPreferences pm = context.getSharedPreferences(CommonServerData.FILE_NAME_SAVE_SERVER, Context.MODE_PRIVATE);
+        return pm.getInt(CommonServerData.DEBUG_SERVICE_TYPE, CommonServerData.T_SERVICE_DEFAULT);
     }
 }
