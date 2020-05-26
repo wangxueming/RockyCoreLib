@@ -3,8 +3,6 @@ package com.rockyw.couriershop.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import org.greenrobot.greendao.database.Database;
-
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -14,13 +12,10 @@ import java.util.TreeMap;
  */
 public class MyDataBaseHelper extends DaoMaster.OpenHelper {
 
-
-    private static final String DB_NAME = "test.db";
-
     private static final SortedMap<Integer, Migration> ALL_MIGRATIONS = new TreeMap<>();
 
     static {
-        ALL_MIGRATIONS.put(1, new V1Migration());
+//        ALL_MIGRATIONS.put(1, new V1Migration());
 //        ALL_MIGRATIONS.put(2, new V2Migration());
 //        ALL_MIGRATIONS.put(3, new V3Migration());
     }
@@ -48,6 +43,3 @@ public class MyDataBaseHelper extends DaoMaster.OpenHelper {
         }
     }
 }
-
-
-

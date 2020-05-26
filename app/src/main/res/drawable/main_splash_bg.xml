@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:drawable="@drawable/main_splash_bg_com" />
+
+    <item
+        android:bottom="15dp">
+
+        <bitmap
+            android:gravity="center_horizontal|bottom"
+            android:src="@drawable/main_splash_xuexi_logo" />
+    </item>
+</layer-list>

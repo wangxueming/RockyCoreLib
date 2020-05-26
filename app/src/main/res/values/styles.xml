@@ -1,5 +1,5 @@
 <resources>
-
-
-
+    <style name="main_SplashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/main_splash_bg</item>
+    </style>
 </resources>

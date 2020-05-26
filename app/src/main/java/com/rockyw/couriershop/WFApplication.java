@@ -45,7 +45,7 @@ public class WFApplication extends BaseApplication {
         configUMeng();
 
         DimensionUtil.init(this);
-//        initDatabase();
+        initDatabase();
     }
 
     @Override

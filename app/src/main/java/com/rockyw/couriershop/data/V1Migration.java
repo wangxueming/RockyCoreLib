@@ -9,6 +9,6 @@ public class V1Migration implements Migration {
 
     @Override
     public void migrate(SQLiteDatabase db) {
-        db.execSQL("ALTER TABLE NOTE ADD COLUMN test");
+//        db.execSQL("ALTER TABLE NOTE ADD COLUMN test");
     }
 }
