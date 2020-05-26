@@ -32,7 +32,6 @@
             android:name=".module.home.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/base_AppTheme" />
-        <activity android:name=".CompanyListActivity" />
     </application>
 
 </manifest>

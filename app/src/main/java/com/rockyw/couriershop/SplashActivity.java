@@ -44,7 +44,7 @@ public class SplashActivity extends BaseVpActivity<ISplashContract.View, ISplash
         super.onCreate(savedInstanceState);
 
 //        startAppLogic();
-        jumpToTestPage();
+//        jumpToTestPage();
     }
 
     @Override

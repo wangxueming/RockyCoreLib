@@ -83,13 +83,13 @@ public class HomeActivity extends BaseVcActivity {
     private void handleSwitchTab() {
         mSelectedTabIndex = getIntent().getIntExtra(CommonAction.COM_ACT_DATA_1, 0);
         switch (mSelectedTabIndex) {
-            case CommonAction.HOME_TAB_FIRST:
+            case CommonAction.HOME_TAB_MAIN:
                 selectTabPage(mCurrentSelectedPos = INDEX_FIRST_PAGE);
                 break;
-            case CommonAction.HOME_TAB_PRODUCT:
+            case CommonAction.HOME_TAB_STORAGE:
                 selectTabPage(mCurrentSelectedPos = INDEX_PRODUCT);
                 break;
-            case CommonAction.HOME_TAB_ACCOUNT:
+            case CommonAction.HOME_TAB_MESSAGE:
                 selectTabPage(mCurrentSelectedPos = INDEX_ACCOUNT);
                 break;
             case CommonAction.HOME_TAB_MY:

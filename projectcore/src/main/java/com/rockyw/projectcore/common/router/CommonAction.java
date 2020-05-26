@@ -15,4 +15,10 @@ public interface CommonAction {
     String COM_REQ_DATA_1 = "req_data1";
     String COM_REQ_DATA_2 = "req_data2";
     String COM_REQ_DATA_3 = "req_data3";
+
+
+    int HOME_TAB_MAIN = 0;
+    int HOME_TAB_STORAGE = 1;
+    int HOME_TAB_MESSAGE = 2;
+    int HOME_TAB_MY = 3;
 }

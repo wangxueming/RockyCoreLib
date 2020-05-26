@@ -1,18 +1,14 @@
 package com.rockyw.couriershop;
 
-import com.alibaba.android.arouter.facade.annotation.Autowired;
-import com.rockyw.projectcore.service.login.IAccountService;
-import com.rockyw.couriershop.data.DaoMaster;
-import com.rockyw.couriershop.data.DaoSession;
-import com.rockyw.couriershop.data.MyDataBaseHelper;
-import com.umeng.commonsdk.UMConfigure;
-import com.rockyw.projectcore.common.router.RouterUrl;
 import com.rockyw.core.BaseApplication;
 import com.rockyw.core.LifecycleHandler;
 import com.rockyw.core.base.BaseEventBusBean;
 import com.rockyw.core.util.DimensionUtil;
-import com.rockyw.projectcore.UrlServiceManager;
+import com.rockyw.couriershop.data.DaoMaster;
+import com.rockyw.couriershop.data.DaoSession;
+import com.rockyw.couriershop.data.MyDataBaseHelper;
 import com.rockyw.router.WFRouter;
+import com.umeng.commonsdk.UMConfigure;
 
 import org.greenrobot.greendao.database.Database;
 
@@ -24,9 +20,6 @@ import org.greenrobot.greendao.database.Database;
  * @date 2018/12/28
  */
 public class WFApplication extends BaseApplication {
-
-    @Autowired(name = RouterUrl.SERVER_ACCOUNT)
-    IAccountService accountService;
 
     private static WFApplication mWFApplication;
 
@@ -48,27 +41,16 @@ public class WFApplication extends BaseApplication {
 
         registerActivityLifecycleCallbacks(new LifecycleHandler());
 
-        //#配置账户状态监听
-        registerAccountListener();
-
         //#配置umeng
         configUMeng();
 
         DimensionUtil.init(this);
-        initDatabase();
+//        initDatabase();
     }
 
     @Override
     protected void onEvent(BaseEventBusBean event) {
         super.onEvent(event);
-    }
-
-    @Override
-    public void doLogoutInApplication() {
-        IAccountService accountService = UrlServiceManager.getAccountService();
-        accountService.clearUserInfo(this);
-        accountService.notifyLogout();
-        accountService.startSplashPage();
     }
 
     private void configUMeng() {
@@ -80,29 +62,6 @@ public class WFApplication extends BaseApplication {
          */
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "");
     }
-
-    private void registerAccountListener() {
-        accountService.registerObserver(new IAccountService.Observer() {
-            @Override
-            public void onLoginSuccess() {
-            }
-
-            @Override
-            public void onLoginCancel() {
-            }
-
-            @Override
-            public void onLoginFailure() {
-            }
-
-            @Override
-            public void onLogout() {
-                com.rockyw.couriershop.net.Server.resetServerApi();
-                AppConfigLauncher.reInit();
-            }
-        });
-    }
-
 
     private void initDatabase() {
         // DevOpenHelper 在数据库升级时会删除所有的表，release 版本要记得换回来
