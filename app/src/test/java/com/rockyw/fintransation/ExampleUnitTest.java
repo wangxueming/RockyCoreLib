@@ -1,4 +1,4 @@
-package com.rockyw.weather;
+package com.rockyw.couriershop;
 
 import org.junit.Test;
 

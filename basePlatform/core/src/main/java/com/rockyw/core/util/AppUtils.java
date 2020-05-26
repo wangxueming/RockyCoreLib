@@ -115,10 +115,8 @@ public class AppUtils {
         int minLen = Math.min(version1Array.length, version2Array.length);
         int diff = 0;
         // 循环判断每位的大小
-        L.d("verTag2=2222="+version1Array[index]);
         while (index < minLen
-                && (diff = Integer.parseInt(version1Array[index])
-                - Integer.parseInt(version2Array[index])) == 0) {
+                && (diff = Integer.parseInt(version1Array[index]) - Integer.parseInt(version2Array[index])) == 0) {
             index++;
         }
         if (diff == 0) {

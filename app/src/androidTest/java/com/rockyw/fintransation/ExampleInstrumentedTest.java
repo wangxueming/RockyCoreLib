@@ -1,4 +1,4 @@
-package com.rockyw.weather;
+package com.rockyw.couriershop;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

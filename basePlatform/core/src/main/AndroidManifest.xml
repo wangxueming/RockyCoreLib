@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- Required -->
     <permission
-        android:name="com.rockyw.weather.permission.JPUSH_MESSAGE"
+        android:name="com.rockyw.couriershop.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
     <!-- Required  一些系统要求的权限，如访问网络等-->
     <uses-permission android:name="com.rockyw.weather.permission.JPUSH_MESSAGE" />
